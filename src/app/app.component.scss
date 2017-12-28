@@ -1,0 +1,94 @@
+
+@import "variables";
+
+@mixin warning {
+    background-color: orange;
+    color: white;
+};
+
+@mixin rounded($radius) {
+    border-radius: $radius;
+}
+@mixin box($radius, $border){
+    @include rounded($radius);
+    border: $border
+
+}
+
+.warning-button {
+   @include warning;
+   padding: 8px;
+}
+
+article {
+  font-family: $text-font;
+  color: $text-color;
+}
+
+h1, h2, h3, h4 {
+  font-family: $headline-font;
+}
+
+p {
+  font-family: $text-font;
+}
+
+a {
+  color: $link-color;
+}
+
+#header {
+  @include  box(20px, 10px solid #999);
+  height: $header-height;
+  background-color: $theme-color;
+
+  #main-menu {
+    
+    li {
+      display: inline;
+    }
+    a {
+      color: $menu-item-color;
+    }
+  }
+  
+  #logo {
+
+  }
+}
+
+#main {
+  width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  #content {
+    float:left;
+    width: 6*$col;
+  }
+
+  #sidebar {
+    float:right;
+    width: 2*$col;
+    li {
+      list-style-type: none;
+      border-bottom: 1px dashed darkseagreen;
+      color: brown;
+     }
+  
+  }
+}
+
+
+
+#footer {
+  height: $footer-height;
+  background-color: $ternary-color;
+  position: fixed; 
+   bottom: 0;
+  left: 0;
+   right: 0;
+  
+}
+
+
